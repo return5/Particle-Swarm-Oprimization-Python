@@ -16,22 +16,25 @@
 
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
-
 import random
-import particle
+import Particle
 
 SWARM = {}               #swarm is list of particle objects
 GLOBAL_BEST_X = 0        #the best X so far found. 
 GLOBAL_BEST_RESULT = 0   #the best result so far found. 
 
 
-#make each individual particle for the swarm
+
 def makeParticles():
+    """make each individual particle for the swarm"""
+
     for i in range(100):    #make 100 particles for the swarm
         SWARM[i] = Particle.Particle()
      
-#if a particle gets a better result then set global best to that new result
+
 def checkGlobalBestResult(particle):
+    """if a particle gets a better result then set global best to that new result"""
+
     global GLOBAL_BEST_X,GLOBAL_BEST_RESULT                   #tell python these are global variables
     if(abs(particle.best_result) < abs(GLOBAL_BEST_RESULT)):  #check particle's current result against the global best result
         print("\nnew best X "   + str(particle.best_x))
@@ -40,6 +43,7 @@ def checkGlobalBestResult(particle):
         GLOBAL_BEST_RESULT = particle.best_result
 
 def particleSwarm():
+    """iterate over the entire swarm one particle at a time until either the equation is solved or the limit runs out"""
     limit = 20000                                            #limit number of total possible iterations to prevent a possible infinite loop
     while abs(GLOBAL_BEST_RESULT) > 0.000001 and limit > 0:   #while root hasnt been found and while limit hasn't been reached
         for i in SWARM: #for each particle in swarm
