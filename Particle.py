@@ -48,8 +48,8 @@ class Particle:
          """attempt to solve the equation with the current_x for this particle. set the current result to the esult of the equation
         equation here is 3x^3 -x^2 + 7x + 3891.3369
         correct x for this equation is 4.2...
-        self.current_result = (3*self.current_x**3) - (self.current_x**2) +( 7*self.current_x) - 234.024
         """
+        self.current_result = (3*self.current_x**3) - (self.current_x**2) +( 7*self.current_x) - 234.024
 
     def printInfo(self):    
         """prints the relevant information for that particle"""
