@@ -17,7 +17,6 @@
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 import random
-import subprocess
 
 class Particle:
     C_1 = 1.5        #cognitive coefficient. 
