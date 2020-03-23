@@ -17,8 +17,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-import particle
 import random
+import particle
 
 SWARM = {}               #swarm is list of particle objects
 GLOBAL_BEST_X = 0        #the best X so far found. 
@@ -28,7 +28,7 @@ GLOBAL_BEST_RESULT = 0   #the best result so far found.
 #make each individual particle for the swarm
 def makeParticles():
     for i in range(100):    #make 100 particles for the swarm
-        SWARM[i] = particle.Particle()
+        SWARM[i] = Particle.Particle()
      
 #if a particle gets a better result then set global best to that new result
 def checkGlobalBestResult(particle):
